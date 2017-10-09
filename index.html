@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+
+var gulp=require('gulp');
+var minify=require('gulp-minify-css');
+var concat=require('gulp-concat');
+var rename=require('gulp-rename');
+var notify=require('gulp-notify');
+gulp.task('default',function(){
+    gulp.src('./css/*.css')
+        .pipe(concat('mian.css'))
+        .pipe(rename({
+            suffix:'.min'
+        })) 
+        .pipe(minify())
+        .pipe(gulp.dest('./css'))
+        
+})
+
+    </script>
+</body>
+
+</html>
